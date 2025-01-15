@@ -3,13 +3,14 @@
     
     {% block contant %}
     
-    <form action="" method="post">{% csrf_token %}
-        <label for="uname">UserName</label>
+    <form action="" method="POST">{% csrf_token %}
+        <label for="name">UserName</label>
         <input type="text" name="uname" placeholder="enter Your Name" required>
         <label for="pass">Password</label>
         <input type="text" name="pass" placeholder="enter Your Password" required>
 
         <button type="submit">Submit</button>
+        <li><a href="{%url 'Signup'%}">Create Account</a></li>
 
     </form>
 

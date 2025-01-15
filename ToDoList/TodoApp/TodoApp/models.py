@@ -7,3 +7,10 @@ class TODOO(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
+class signup(models.Model):
+    Uname= models.CharField(max_length=25)
+    Email= models.CharField(max_length=100)
+    Pass= models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.Uname
