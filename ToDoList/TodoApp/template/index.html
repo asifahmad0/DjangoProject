@@ -1,14 +1,25 @@
 {% extends 'head.html' %} {% block contant %}
 <main>
+  
+  
+  <h1 class="head_title">{{user}}</h1>
+  <div class="logout"><a href="{% url 'Signout' %}">Logout</a></div>
   <div class="todo">
-    <div class="head">
-      <input id="add" type="text" placeholder="Entre your Todo" required/>
-      <li>X</li>
-    </div>
+    <form class="head"action="" method="POST"> {% csrf_token %}
+      <input id="add" name="Todo" type="text" placeholder="Entre your Todo" required/>
+      <button class="btn" type="submit">Add</button>
+    </form>
     <div class="box">
+      {%for i in todoo %}
+      <div class="list">
+        <p><!--{{i.srno}}--> {{i.title}}</p>
+    <li class='close'><a href="/delet_todo/{{i.srno}}">x</a></li>
+      </div>
+      {% endfor %}
         
     </div>
   </div>
+
 </main>
 
 {% endblock %}

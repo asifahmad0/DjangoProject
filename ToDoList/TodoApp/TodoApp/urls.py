@@ -23,4 +23,7 @@ urlpatterns = [
     path('', view.Signup, name='Signup'),
     path('login/', view.Login, name='Login'),
     path('todo/', view.todo, name='Todo'),
+    path('edit_todo/<int:srno>', view.edit_todo, name='Edit_todo'),
+    path('delet_todo/<int:srno>', view.delet_todo, name='delet_todo'),
+    path('signout/', view.signout, name='Signout')
 ]

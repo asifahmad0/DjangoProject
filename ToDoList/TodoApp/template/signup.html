@@ -2,7 +2,7 @@
     {% extends 'head.html' %}
     {% block contant %}
     <div class="main">
-    <form action="" method="POST">{% csrf_token %}
+    <form id="form" action="" method="POST">{% csrf_token %}
         <h1>Sign up</h1>
         <label for="uname">UserName</label>
         <input type="text" name="uname" placeholder="enter Your Name" required>
@@ -12,6 +12,7 @@
         <input type="text" name="pass" placeholder="enter Your Password" required>
 
         <button type="submit">Submit</button>
+        <li><a href="{%url 'Login'%}">Login</a></li>
 
     </form>
 </div>

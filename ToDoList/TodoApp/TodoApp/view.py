@@ -26,7 +26,7 @@ def Login(request):
       print(userr)
       if userr is not None:
         login(request, userr)
-        return redirect('/todo')
+        return redirect('/todo',{'uname':uname})
       else:
         print(userr, request.method)
         return redirect('/login')
@@ -34,4 +34,23 @@ def Login(request):
     return render(request, 'login.html')
 
 def todo(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+       Todo=request.POST.get('Todo')
+       print(Todo)
+       data = TODOO(title=Todo,user= request.user)
+       data.save()
+    todoo=TODOO.objects.filter(user=request.user).order_by('-date')
+    user=request.user
+    return render(request, 'index.html', {'todoo':todoo})
+
+def edit_todo(request):
+   return
+
+def delet_todo(request,srno):
+   obj=TODOO.objects.get(srno=srno)
+   obj.delete()
+   return redirect('/todo')
+
+def signout(request):
+   logout(request)
+   return redirect('/login')
