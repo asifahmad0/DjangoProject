@@ -11,10 +11,15 @@
 
 main{
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background-image: url(media/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 main .todo{
     position: relative;
@@ -94,4 +99,54 @@ justify-content: center;
 cursor: pointer;
 margin-bottom: 5px;
 color: var(--color);
+}
+/*------------------------------------login------------------------------------------------*/
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    background-image: url(media/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+form{
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 20px;
+    color: var(--color);
+}
+form h1{
+    margin: 0 auto;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    color: white;
+    padding-left: 10px;
+    outline:none;
+    border: none;
+    border-bottom: 2px solid var(--bg);
+    background: transparent;
+}
+form button{
+    border: 2px solid var(--bg);
+    padding: 10px;
+    color: var(--color);
+    border-radius: 20px;
+    background: transparent;
+    transition: .5s;
+}
+form button:hover{
+    background-color: var(--bg);
+    color: var(--color);
 }

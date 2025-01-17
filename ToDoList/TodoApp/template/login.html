@@ -2,8 +2,9 @@
 {% extends 'head.html' %}
     
     {% block contant %}
-    
+    <div class="main">
     <form action="" method="POST">{% csrf_token %}
+        <h1>Login</h1>
         <label for="name">UserName</label>
         <input type="text" name="uname" placeholder="enter Your Name" required>
         <label for="pass">Password</label>
@@ -12,6 +13,6 @@
         <button type="submit">Submit</button>
         <li><a href="{%url 'Signup'%}">Create Account</a></li>
 
-    </form>
+    </form></div>
 
     {% endblock %}
