@@ -12,7 +12,7 @@ def Signup(request):
         passs = request.POST.get('pass')
         print(uname, email, passs)
         data = User.objects.create_user(uname,email,passs)
-        data = signup(Uname=uname,Email=email,Pass=passs)
+        #data = signup(Uname=uname,Email=email,Pass=passs)
         data.save()
         return redirect('/login')
     
