@@ -1,20 +1,32 @@
+{% load static %}
+
 <!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'style.css' %}">
     <title>Document</title>
 </head>
 <body> 
     <main class="main">
         <div class="app">
-            <div class="head">
-                <input type="text">
-                <h1>Indore</h1>  
-            </div>
-            <div class="app_body">
-                <div class="left_body"></div>
-                <div class="right_body"></div>
+            <h1>Weather App</h1>
+            <form class="form" action="" method="POST">{% csrf_token %}
+                <input type="text" name="city">
+                <button type="submit">Search</button>
+            </form>
+            <div class="box">
+                <div class="left">
+                    <p>{{temp}} C</p>
+                    <h1>{{city}}</h1>
+                </div>
+                <div class="right">
+                    <p><img src="https://api.openweathermap.org/img/w/{{icon}}.png" width="100px"></p>
+                    <p>{{description}}</p>
+                    <p>{{day}}</p>
+
+                </div>
             </div>
         </div>
     </main>
