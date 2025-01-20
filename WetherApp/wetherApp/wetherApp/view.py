@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import requests
+from django.contrib import messages
 import datetime
 
 
@@ -15,8 +16,18 @@ def home(request):
 
     data =requests.get(url,PARAMS).json()
 
-    description = data['weather'][0]['description']
-    icon = data['weather'][0]['icon']
-    temp = data['main']['temp']
-    day = datetime.date.today()
-    return render(request, 'index.html',{'city':city, 'description':description, 'icon':icon, 'temp': temp, 'day':day})
+
+    try:
+      
+      description = data['weather'][0]['description']
+      icon = data['weather'][0]['icon']
+      temp = data['main']['temp']
+      day = datetime.date.today()
+      return render(request, 'index.html',{'city':city, 'description':description, 'icon':icon, 'temp': temp, 'day':day, 'exception_occurred': False})
+
+    except:
+        exception_occurred = True
+        messages.error(request, "enter city is not aveleble in this app")
+        day = datetime.date.today()
+
+        return render(request, 'index.html',{'city':'Pakur', 'description':'Clear Sky', 'icon':'01d', 'temp': 25, 'day':day, 'exception_occurred': True})

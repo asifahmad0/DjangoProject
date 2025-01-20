@@ -11,15 +11,15 @@
 <body> 
     <main class="main">
         <div class="app">
-            <h1>Weather App</h1>
+            <h1 class="h1">Weather App</h1>
             <form class="form" action="" method="POST">{% csrf_token %}
-                <input type="text" name="city">
+                <input type="text" name="city" placeholder=" Search Your city" required>
                 <button type="submit">Search</button>
             </form>
             <div class="box">
                 <div class="left">
-                    <p>{{temp}} C</p>
-                    <h1>{{city}}</h1>
+                    <p>{{temp}}&#176; C</p>
+                    <p>{{city}}</p>
                 </div>
                 <div class="right">
                     <p><img src="https://api.openweathermap.org/img/w/{{icon}}.png" width="100px"></p>
@@ -31,5 +31,13 @@
         </div>
     </main>
     
+    {% if exception_occurred %}
+
+    <script>
+        window.onload = function(){
+    alert('City info Not Available ')
+}
+    </script>
+    {% endif %}
 </body>
 </html>

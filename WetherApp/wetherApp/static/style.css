@@ -4,12 +4,22 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+body{
+    background-image: url(https://imgcdn.stablediffusionweb.com/2024/9/27/17e463cd-85e0-470a-b632-ae3a163b4552.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
 .main{
     width: 100vw;
     height: 100vh;
-    display: grid;
-    object-position: center;
-    border: 2px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
 .main .app{
     width: 80vw;
@@ -17,6 +27,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.3);
+}
+.main .app .h1{
+    padding: 20px;
+}
+.main .app .form{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border: 2px solid rgb(0, 0, 0);
+    border-left: none;
+    border-right: none;
+}
 
-    border: 2px solid green;
+.main .app .form input{
+    width: 80%;
+    height: 100%;
+    padding-left: 20px;
+    font-weight: bolder;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.main .app .form button{
+    width: 20%;
+    height: 100%;
+    background: transparent;
+    margin-left: 0;
+    border: none;
+    border-left: 2px solid black;
+}
+.main .app .box{
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+.main .app .box .left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main .app .box .left p{
+    font-size: 2em;
+}
+
+.main .app .box .right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main .app .box .right p{
+    font-size: 2em;
 }
